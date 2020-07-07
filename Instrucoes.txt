@@ -1,0 +1,19 @@
+Instruções:
+Criar o banco no postgres:
+Script:
+
+CREATE DATABASE "desafio_db";
+***********************************************************************
+Alterar o campo id para auto incremento
+Script:
+
+CREATE SEQUENCE public.conta_id_seq
+MAXVALUE 2147483647;
+
+ALTER TABLE public.conta
+  ALTER COLUMN id TYPE INTEGER;
+
+ALTER TABLE public.conta
+  ALTER COLUMN id SET DEFAULT nextval('public.conta_id_seq'::text);
+************************************************************************
+Desenvolvido na IDE Spring Tools Suite 4
